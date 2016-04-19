@@ -1,0 +1,244 @@
+$bgcolor: #3c2957;
+$fgcolor: #b981b8;
+$shaded: $fgcolor;
+$gray: #666;
+
+* { margin: 0; padding: 0; box-sizing: border-box; text-rendering: auto;}
+
+@media screen and (max-width: 700px) { 
+
+    body, article, #column, #footer, #footer p {
+        width: 100% !important; }
+
+    #column, #footer {
+      word-wrap: break-word !important;
+      padding: 1em 0em !important;
+      p, li { 
+        font-size: 24px !important; 
+        line-height: 30px !important;
+      }
+      h1, h2, h4, p, .date, .collections, .location {
+        padding: 0 15px;
+      
+      }
+
+      blockquote, pre { 
+        margin: 0 !important;
+        padding: 0.75em !important }
+      pre {
+        max-width: 100%;
+        overflow: scroll;
+      }
+      ul, ol { margin: 1em 0.5em !important; }
+      img { max-width: 100%; }
+      .caption { border-left: none !important ;}
+      .deltos-results { height: auto !important;}
+    }
+    h1, h2, h3, h4, h5 { 
+      margin-left: 0 !important;
+    }
+
+    h1 { font-size: 2em !important; }
+    #header, #header img {height: 50px !important;background-size: 25px !important;}
+}
+
+
+html, body { 
+  height: 100% ;
+  background: $bgcolor;
+}
+
+a         { color: black}
+a:visited { color: $gray; }
+
+a.article-link { 
+  text-decoration: none ;
+  color: $bgcolor;
+  &:visited { color: $bgcolor; }
+}
+
+#header {
+    width: 100%; 
+    height: 100px;
+    background: url(meander.50.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    img { background: white; margin-left: 23px;}
+    border-bottom: 10px solid $bgcolor;
+}
+
+article { 
+  width: 640px; 
+  margin-bottom: 4em;
+}
+
+#column .img .caption {
+  background: $shaded;
+  margin-top: -5px; 
+  padding: 0 0.5em;
+  border: 2px solid $bgcolor;
+  border-top: none;
+  border-right: none;
+}
+
+#footer {
+  background: $bgcolor;
+  color: $fgcolor;
+  p { width: 640px; }
+  a { color: $fgcolor; }
+  a:visited { color: $shaded }
+}
+
+#column { 
+  border-top: 10px solid $fgcolor;
+  border-bottom: 10px solid $fgcolor;
+  background: white;
+  blockquote, pre {
+    background: $shaded;
+    margin: 0 ;
+    padding: 0.75em;
+    border-top: 2px solid $bgcolor;
+    p { margin: 0; }
+  }
+}
+
+
+#column, #footer {  
+  margin-right: 0;
+  padding: 1em 5em;
+  font-family: "EB Garamond", Georgia, serif;
+
+  .location , .series { 
+    margin: 0.5em 0 -1em 0;
+    color: $bgcolor;
+    font-style: italic;
+    font-size: 100%;
+  }
+
+  p, li { 
+    font-size: 1.5em; 
+    line-height: 1.5em;
+  }
+
+  p { margin: 1em 0; }
+  li { margin: 0 1em; }
+  ul, ol { margin: 1em  2em; }
+  ul { list-style-type: square; }
+
+  h1, h2, h3, h4, h5 { 
+    font-family: "Sorts Mill Goudy",serif;
+    font-weight: normal;
+    margin-left: -20px;
+    margin-bottom: -0.25em;
+    color: $bgcolor;
+  }
+
+  h1 { font-size: 3em; }
+
+  h2 { font-size: 2em; }
+
+  h4 {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.5em;
+  }
+
+  code {  
+    font-family: profontwindowsregular, Courier New, monospace; 
+    font-size: 80%;
+  }
+  li code, p code { 
+    background: $shaded; 
+    padding: 1px 5px;
+  }
+
+  .date { font-style: italic; }
+  .tags { 
+      color: $gray; 
+      font-size: 0.8em;
+      font-style: italic;
+  }
+
+  img, iframe { max-width: 100%; }
+
+  input.deltos-search {
+      width: 100%;
+      height: 1.5em;
+      font-size: 1.5em;
+      padding: 5px;
+  }
+
+  .deltos-results-summary {
+    font-size: 16px;
+    padding: 4px;
+    text-align: center;
+    font-style: italic;
+    border-bottom: 1px solid #999;
+  }
+
+
+  a.result { text-decoration: none }
+
+  a.result.selected > .summary-small {
+    background: $shaded;
+  }
+
+  .summary-small {
+    height: 90px;
+    overflow: hidden;
+    border-bottom: 1px solid #999;
+    .imgwrapper {
+      float: left;
+      background-size: cover;
+      background-image: url(/logo.100.png);
+      background-position: center;
+      height: 90px;
+      width: 90px;
+      border-right: 1px solid gray;
+      margin-right: 15px;
+    }
+
+    h2 { 
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+      margin: 10px 0 0 0;
+      overflow: hidden;
+    }
+    p {
+      font-size: 18px !important;
+      line-height: 24px !important;
+      margin: 4px 30px 0 0;
+    }
+  }
+  .summary {
+    height: 125px;
+    overflow: hidden;
+    border: 1px solid #999;
+    .imgwrapper {
+      float: left;
+      background-size: cover;
+      background-image: url(/logo.100.png);
+      background-position: center;
+      height: 125px;
+      width: 125px;
+      border-right: 1px solid gray;
+      margin-right: 15px;
+    }
+    p { 
+      height: 60px; 
+      margin: 0.5em;
+      overflow: hidden;
+    }
+    h2 { 
+      font-weight: bold;
+      font-size: 1.3em;
+      margin: 0.5em 0 0 0;
+    }
+  }
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Sorts+Mill+Goudy);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond:400);
+
