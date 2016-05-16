@@ -6,17 +6,14 @@
   box-sizing: border-box;
   text-rendering: auto; }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 735px) {
   body, article, #column, #footer, #footer p {
     width: 100% !important; }
 
   #column, #footer {
     word-wrap: break-word !important;
     padding: 1em 0em !important; }
-    #column p, #column li, #footer p, #footer li {
-      font-size: 24px !important;
-      line-height: 30px !important; }
-    #column h1, #column h2, #column h4, #column p, #column .date, #column .collections, #column .location, #footer h1, #footer h2, #footer h4, #footer p, #footer .date, #footer .collections, #footer .location {
+    #column h1, #column h2, #column h3, #column h4, #column h5, #column p, #column .date, #column .collections, #column .location, #footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer p, #footer .date, #footer .collections, #footer .location {
       padding: 0 15px; }
     #column blockquote, #column pre, #footer blockquote, #footer pre {
       margin: 0 !important;
@@ -30,14 +27,8 @@
       max-width: 100%; }
     #column .caption, #footer .caption {
       border-left: none !important; }
-    #column .deltos-results, #footer .deltos-results {
-      height: auto !important; }
-
-  h1, h2, h3, h4, h5 {
-    margin-left: 0 !important; }
-
-  h1 {
-    font-size: 2em !important; }
+    #column .deltos-results h2, #footer .deltos-results h2 {
+      padding: 0 !important; }
 
   #header, #header img {
     height: 50px !important;
@@ -62,20 +53,20 @@ a.article-link {
   width: 100%;
   height: 100px;
   background: url(meander.50.png);
+  border-bottom: 10px solid #3c2957;
   background-repeat: repeat-x;
-  background-position: bottom;
-  border-bottom: 10px solid #3c2957; }
+  background-position: center bottom; }
   #header img {
     background: white;
     margin-left: 23px; }
 
 article {
-  width: 640px;
-  margin-bottom: 4em; }
+  width: 640px; }
 
 #column .img .caption {
   background: #b981b8;
   margin-top: -5px;
+  /* not sure why this is necessary */
   padding: 0 0.5em;
   border: 2px solid #3c2957;
   border-top: none;
@@ -106,15 +97,15 @@ article {
 #column, #footer {
   margin-right: 0;
   padding: 1em 5em;
-  font-family: "EB Garamond", Georgia, serif; }
-  #column .location, #column .series, #footer .location, #footer .series {
-    margin: 0.5em 0 -1em 0;
+  font-family: "EB Garamond", "Palatino Linotype", serif; }
+  #column .location, #column .collections, #footer .location, #footer .collections {
+    margin: 0.5em 0;
     color: #3c2957;
     font-style: italic;
     font-size: 100%; }
   #column p, #column li, #footer p, #footer li {
-    font-size: 1.5em;
-    line-height: 1.5em; }
+    font-size: 20px;
+    line-height: 24px; }
   #column p, #footer p {
     margin: 1em 0; }
   #column li, #footer li {
@@ -124,21 +115,28 @@ article {
   #column ul, #footer ul {
     list-style-type: square; }
   #column h1, #column h2, #column h3, #column h4, #column h5, #footer h1, #footer h2, #footer h3, #footer h4, #footer h5 {
-    font-family: "Sorts Mill Goudy",serif;
+    font-family: "Sorts Mill Goudy","Palatino Linotype", serif;
     font-weight: normal;
-    margin-left: -20px;
-    margin-bottom: -0.25em;
-    color: #3c2957; }
+    color: #3c2957;
+    margin-bottom: -0.25em; }
+  #column .title, #footer .title {
+    margin-bottom: 0; }
   #column h1, #footer h1 {
-    font-size: 3em; }
+    font-size: 64px;
+    line-height: 70px; }
   #column h2, #footer h2 {
-    font-size: 2em; }
+    font-size: 40px;
+    line-height: 48px; }
+  #column h3, #footer h3 {
+    font-size: 32px;
+    line-height: 38px; }
   #column h4, #footer h4 {
     font-weight: normal;
     font-style: italic;
-    font-size: 1.5em; }
+    font-size: 24px;
+    line-height: 28px; }
   #column code, #footer code {
-    font-family: profontwindowsregular, Courier New, monospace;
+    font-family: profontwindowsregular, "Courier New", monospace;
     font-size: 80%; }
   #column li code, #column p code, #footer li code, #footer p code {
     background: #b981b8;
@@ -162,6 +160,9 @@ article {
     text-align: center;
     font-style: italic;
     border-bottom: 1px solid #999; }
+  #column .deltos-results, #footer .deltos-results {
+    height: 450px;
+    overflow-y: auto; }
   #column a.result, #footer a.result {
     text-decoration: none; }
   #column a.result.selected > .summary-small, #footer a.result.selected > .summary-small {
@@ -173,7 +174,7 @@ article {
     #column .summary-small .imgwrapper, #footer .summary-small .imgwrapper {
       float: left;
       background-size: cover;
-      background-image: url(/logo.100.png);
+      background-image: url(/dklogo.simple.png);
       background-position: center;
       height: 90px;
       width: 90px;
@@ -188,7 +189,7 @@ article {
     #column .summary-small p, #footer .summary-small p {
       font-size: 18px !important;
       line-height: 24px !important;
-      margin: 4px 30px 0 0; }
+      margin: 4px 0 0 0; }
   #column .summary, #footer .summary {
     height: 125px;
     overflow: hidden;
@@ -196,7 +197,7 @@ article {
     #column .summary .imgwrapper, #footer .summary .imgwrapper {
       float: left;
       background-size: cover;
-      background-image: url(/logo.100.png);
+      background-image: url(/dklogo.simple.png);
       background-position: center;
       height: 125px;
       width: 125px;

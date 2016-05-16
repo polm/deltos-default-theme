@@ -3,23 +3,23 @@ $fgcolor: #b981b8;
 $shaded: $fgcolor;
 $gray: #666;
 
+$header-background-repeat: repeat-x;
+$header-background-position: center bottom;
+$header-background-image: url(meander.50.png);
+$header-mini-height: 50px;
+$header-mini-background-size: 25px;
+
 * { margin: 0; padding: 0; box-sizing: border-box; text-rendering: auto;}
 
-@media screen and (max-width: 700px) { 
-
+@media screen and (max-width: 735px) { 
     body, article, #column, #footer, #footer p {
         width: 100% !important; }
 
     #column, #footer {
       word-wrap: break-word !important;
       padding: 1em 0em !important;
-      p, li { 
-        font-size: 24px !important; 
-        line-height: 30px !important;
-      }
-      h1, h2, h4, p, .date, .collections, .location {
+      h1, h2, h3, h4, h5, p, .date, .collections, .location {
         padding: 0 15px;
-      
       }
 
       blockquote, pre { 
@@ -32,14 +32,15 @@ $gray: #666;
       ul, ol { margin: 1em 0.5em !important; }
       img { max-width: 100%; }
       .caption { border-left: none !important ;}
-      .deltos-results { height: auto !important;}
-    }
-    h1, h2, h3, h4, h5 { 
-      margin-left: 0 !important;
+      .deltos-results { 
+        h2 { padding: 0 !important; }
+      }
     }
 
-    h1 { font-size: 2em !important; }
-    #header, #header img {height: 50px !important;background-size: 25px !important;}
+    #header, #header img {
+      height: $header-mini-height !important;
+      background-size: $header-mini-background-size !important;
+    }
 }
 
 
@@ -60,21 +61,20 @@ a.article-link {
 #header {
     width: 100%; 
     height: 100px;
-    background: url(meander.50.png);
-    background-repeat: repeat-x;
-    background-position: bottom;
+    background: $header-background-image;
     img { background: white; margin-left: 23px;}
     border-bottom: 10px solid $bgcolor;
+    background-repeat: $header-background-repeat;
+    background-position: $header-background-position;
 }
 
 article { 
   width: 640px; 
-  margin-bottom: 4em;
 }
 
 #column .img .caption {
   background: $shaded;
-  margin-top: -5px; 
+  margin-top: -5px; /* not sure why this is necessary */
   padding: 0 0.5em;
   border: 2px solid $bgcolor;
   border-top: none;
@@ -106,18 +106,18 @@ article {
 #column, #footer {  
   margin-right: 0;
   padding: 1em 5em;
-  font-family: "EB Garamond", Georgia, serif;
+  font-family: "EB Garamond", "Palatino Linotype", serif;
 
-  .location , .series { 
-    margin: 0.5em 0 -1em 0;
+  .location, .collections { 
+    margin: 0.5em 0; 
     color: $bgcolor;
     font-style: italic;
     font-size: 100%;
   }
 
   p, li { 
-    font-size: 1.5em; 
-    line-height: 1.5em;
+    font-size: 20px; 
+    line-height: 24px;
   }
 
   p { margin: 1em 0; }
@@ -126,25 +126,28 @@ article {
   ul { list-style-type: square; }
 
   h1, h2, h3, h4, h5 { 
-    font-family: "Sorts Mill Goudy",serif;
+    font-family: "Sorts Mill Goudy","Palatino Linotype", serif;
     font-weight: normal;
-    margin-left: -20px;
-    margin-bottom: -0.25em;
     color: $bgcolor;
+    margin-bottom: -0.25em;
   }
 
-  h1 { font-size: 3em; }
+  .title {
+    margin-bottom: 0; 
+  }
 
-  h2 { font-size: 2em; }
-
+  h1 { font-size: 64px; line-height: 70px; }
+  h2 { font-size: 40px; line-height: 48px; }
+  h3 { font-size: 32px; line-height: 38px; }
   h4 {
     font-weight: normal;
     font-style: italic;
-    font-size: 1.5em;
+    font-size: 24px;
+    line-height: 28px;
   }
 
   code {  
-    font-family: profontwindowsregular, Courier New, monospace; 
+    font-family: profontwindowsregular, "Courier New", monospace; 
     font-size: 80%;
   }
   li code, p code { 
@@ -176,6 +179,10 @@ article {
     border-bottom: 1px solid #999;
   }
 
+  .deltos-results {
+    height: 450px;
+    overflow-y: auto;
+  }
 
   a.result { text-decoration: none }
 
@@ -190,7 +197,7 @@ article {
     .imgwrapper {
       float: left;
       background-size: cover;
-      background-image: url(/logo.100.png);
+      background-image: url(/dklogo.simple.png);
       background-position: center;
       height: 90px;
       width: 90px;
@@ -208,7 +215,7 @@ article {
     p {
       font-size: 18px !important;
       line-height: 24px !important;
-      margin: 4px 30px 0 0;
+      margin: 4px 0 0 0;
     }
   }
   .summary {
@@ -218,7 +225,7 @@ article {
     .imgwrapper {
       float: left;
       background-size: cover;
-      background-image: url(/logo.100.png);
+      background-image: url(/dklogo.simple.png);
       background-position: center;
       height: 125px;
       width: 125px;
